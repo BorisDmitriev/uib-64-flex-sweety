@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 68.75%;  /*11px*/
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(38, 37, 52);
+}
+
+a{
+    text-align: center;    
+}
+
+
+/* Utilities */
+.flex {
+    display: flex;
+}
+
+
+/* Header Nav */
+.nav {
+    background-color: rgb(254, 254, 255);
+    padding: 3rem;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+}
+
+.nav__list {
+    display: none;
+}
+
+.nav__logo {
+    font-family: 'Lemon', cursive;
+    font-size: 3rem;
+    display: none;
+}
+
+.nav__icons-group [class*="fa"] {
+    padding: 1rem;
+    background-color: rgb(238, 238, 238);
+    border-radius: .4rem;
+    font-size: 3rem;
+    margin: .9rem;
+}
+.nav__icons-group [class*="fa"]:hover {
+    background-color: deeppink
+}
+
+
+/* Intro */
+.intro {
+    margin-top: 12rem;
+    background-color: red;
+    background: bottom / 120% no-repeat url(/images/sweetBg.jpg);
+    height: 40vh;
+}
+
+.intro__group{
+    width: 80%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.intro__heading{
+    font-size: 2rem;
+    margin-bottom: 2.3rem;
+}
+.intro__heading--red{
+    color: rgba(256, 43, 130, 1);
+}
+
+.intro__text{
+    line-height: 3rem;
+    margin-bottom: 2.3rem;
+}
+
+
+.intro__btn,
+.cart__btn{
+    display: block;
+    width: fit-content;
+    color: rgb(38, 37, 52);
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 1.5rem 2rem;
+    background-color: deeppink;
+    border: .1rem solid rgb(38, 37, 52);
+    border-radius: .9rem;
+}
+.intro__btn:hover,
+.cart__btn:hover{
+    background-color: rgb(0, 194, 0);
+}
+
+/* Articles */
+.articles{
+    background-color: rgb(238, 238, 239);
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 2rem;
+}
+
+.cart {
+    width: 80%;
+    padding: 4rem;
+    flex-direction: column;
+    background-color: rgb(225,253,245);
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.cart__img{
+    width: 16rem;
+    height: 16rem;
+    margin-bottom: 2rem;
+}
+.cart__heading{
+    margin-bottom: 2rem;
+}
+.cart__text{
+    line-height: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.lemon-zest{background: center / cover url(/images/donut1.png);}
+.cherry-pie{background: center / cover url(/images/donut2.png);}
+.sweet-cocoa{background: center / cover url(/images/donut3.png);}
+.frosty{background: center / cover url(/images/donut4.png);}
+.very-berry{background: center / cover url(/images/donut5.png);}
+.blue-berry{background: center / cover url(/images/donut6.png);}
+.lemon-zest{background: center / cover url(/images/donut1.png);}
+
+/* MEDIA Q */
+
+/* Mobile */
+@media screen and (min-width:405px) {
+    .nav {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .nav__icons-group [class*="fa"] {
+        font-size: 2rem;
+        margin:0;
+    }
+    .nav__icons-group [class*="fa"]:not(:last-child) {
+        margin-right: .2rem;
+    }
+
+    .nav__logo {
+        display: block;
+    }
+}
+
+/* Tablet portrait */
+@media screen and (min-width:768px) {
+
+    :root {
+        font-size: 62.5%;
+    }
+
+    .articles{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cart {
+        width: 40%;
+        margin-right: 4rem;
+    }
+
+    .intro__heading{
+        font-size: 4rem;
+    }
+}
+
+
+/* Desktop */
+@media screen and (min-width:992px) {
+    .nav__list {
+        display: flex;
+    }
+
+    .nav__list li {
+        list-style: none;
+        padding: 1rem;
+    }
+
+    .nav__list li a,
+    .nav__list li a:link {
+        text-decoration: none;
+        color: rgb(38, 37, 52);
+        font-weight: 600;
+        font-size: 1.8rem;
+    }
+
+    .nav__list li a:hover {
+       border-bottom: .2rem solid deeppink;
+    }
+
+
+    .nav__icons-group [class*="fa-bars"] {
+        display: none;
+    }
+
+    .cart {
+        width: 30%;
+    }
+    .cart:not(:last-child) {
+        margin-right: 2rem;;
+    }
+}
+
+/* Large Desktop */
+@media screen and (min-width:1200px) {
+    .nav__list li:not(:last-child) {
+        margin-right: 4rem;
+    }
+
+}
